@@ -72,6 +72,7 @@ func getTGchannel(channelID string) []interface{} {
 		message_structured["datetime"], _ = s.Find(".tgme_widget_message_date time").Attr("datetime")
 		message_structured["owner"] = s.Find(".tgme_widget_message_owner_name").Text()
 		message_structured["views"] = s.Find(".tgme_widget_message_views").Text()
+		message_structured["embed"] = s.Find(".tgme_page_embed_code").Text()
 		messages_structured[MaxMsgNum-i-1] = message_structured
 	})
 
